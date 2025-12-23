@@ -141,17 +141,15 @@ export function DocumentGrid() {
 
   return (
     <div className="space-y-3">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <div className="text-xs text-slate-500">
           Rows:{' '}
           <span className="font-semibold text-slate-800">{documents.length}</span>
         </div>
-        <Button type="button" onClick={addRow}>
-          Add row
-        </Button>
+        <Button type="button" onClick={addRow} size="sm">Add row</Button>
       </div>
 
-      <div className="overflow-auto rounded-md border bg-white">
+      <div className="overflow-x-auto rounded-md border bg-white">
         <table className="min-w-full border-collapse text-left text-xs">
           <thead className="bg-slate-50 text-[11px] font-medium text-slate-500">
             <tr>

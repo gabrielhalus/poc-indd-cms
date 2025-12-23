@@ -52,8 +52,8 @@ export function DocumentList({
     documents.every((doc) => selectedIds.includes(doc.id));
 
   return (
-    <div className="overflow-hidden">
-      <Table>
+    <div className="overflow-x-auto">
+      <Table className="min-w-full">
         <TableHeader>
           <TableRow>
             <TableHead className="w-8 text-center">

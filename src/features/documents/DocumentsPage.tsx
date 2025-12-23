@@ -232,36 +232,37 @@ export function DocumentsPage() {
   };
 
   return (
-    <section className="flex h-[calc(100vh-5rem)] flex-col space-y-4">
-      <header className="flex items-center justify-between px-1">
+    <section className="flex min-h-0 flex-1 flex-col space-y-4 lg:h-[calc(100vh-8rem)]">
+      <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h2 className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-lg font-bold text-transparent">
+          <h2 className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-base font-bold text-transparent sm:text-lg">
             Documents
           </h2>
           <p className="mt-1 text-xs text-slate-600">
             Manage individual documents and their images; export when ready.
           </p>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3">
           {selectedIds.length > 0 ? (
             <Button
               type="button"
               variant="outline"
               onClick={handleBulkDelete}
               className="text-xs"
+              size="sm"
             >
               Delete selected ({selectedIds.length})
             </Button>
           ) : null}
           <ExportButton />
-          <Button type="button" onClick={handleAddDocument}>
+          <Button type="button" onClick={handleAddDocument} size="sm">
             New document
           </Button>
         </div>
       </header>
 
-      <div className="flex min-h-0 flex-1 gap-6">
-        <aside className="flex w-80 min-w-[260px] flex-col rounded-xl border border-white/50 bg-white/90 backdrop-blur-md shadow-elevated overflow-hidden">
+      <div className="flex min-h-0 flex-1 flex-col gap-4 lg:flex-row lg:gap-6">
+        <aside className="flex w-full flex-col rounded-xl border border-white/50 bg-white/90 backdrop-blur-md shadow-elevated overflow-hidden lg:w-80 lg:min-w-[260px]">
           <div className="flex items-center justify-between border-b border-slate-200/50 bg-gradient-to-r from-slate-50/80 to-white/80 px-4 py-3 backdrop-blur-sm">
             <span className="text-xs font-semibold text-slate-700">
               Documents
@@ -270,7 +271,7 @@ export function DocumentsPage() {
               {documents.length}
             </span>
           </div>
-          <div className="min-h-0 flex-1 overflow-y-auto">
+          <div className="min-h-0 flex-1 overflow-y-auto max-h-[300px] lg:max-h-none">
             <DocumentList
               schema={schema}
               documents={documents}

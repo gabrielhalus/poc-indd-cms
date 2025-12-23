@@ -88,8 +88,8 @@ export function DocumentDetail({ schema, document }: DocumentDetailProps) {
 
   if (!document) {
     return (
-      <div className="flex h-full items-center justify-center rounded-xl border border-dashed border-slate-200/50 bg-gradient-to-br from-slate-50/80 to-white/80 backdrop-blur-sm">
-        <p className="text-xs font-medium text-slate-500">
+      <div className="flex h-full min-h-[200px] items-center justify-center rounded-xl border border-dashed border-slate-200/50 bg-gradient-to-br from-slate-50/80 to-white/80 backdrop-blur-sm p-4">
+        <p className="text-center text-xs font-medium text-slate-500 sm:text-sm">
           Select a document from the table or create a new one.
         </p>
       </div>
@@ -97,8 +97,8 @@ export function DocumentDetail({ schema, document }: DocumentDetailProps) {
   }
 
   return (
-    <div className="space-y-6 rounded-xl border border-white/50 bg-white/90 backdrop-blur-md p-6 shadow-elevated">
-      <h3 className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-base font-bold text-transparent">
+    <div className="space-y-4 rounded-xl border border-white/50 bg-white/90 backdrop-blur-md p-4 shadow-elevated sm:space-y-6 sm:p-6">
+      <h3 className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-sm font-bold text-transparent sm:text-base">
         Document details
       </h3>
       <div className="space-y-4">
@@ -166,11 +166,11 @@ export function DocumentDetail({ schema, document }: DocumentDetailProps) {
                           <img
                             src={URL.createObjectURL(asset.blob)}
                             alt={ref?.originalFilename ?? 'Preview'}
-                            className="h-[180px] w-auto max-w-full object-contain"
+                            className="h-[120px] w-auto max-w-full object-contain sm:h-[180px]"
                           />
                         ) : hasRefButNoAsset ? (
                           <div
-                            className="flex h-[180px] flex-col items-center justify-center text-[11px] text-slate-400"
+                            className="flex h-[120px] flex-col items-center justify-center text-[11px] text-slate-400 sm:h-[180px]"
                             style={getAspectRatioStyle(field)}
                           >
                             <span className="text-orange-600">Image reference found but asset missing</span>
@@ -180,7 +180,7 @@ export function DocumentDetail({ schema, document }: DocumentDetailProps) {
                           </div>
                         ) : (
                           <div
-                            className="flex h-[180px] flex-col items-center justify-center text-[11px] text-slate-400"
+                            className="flex h-[120px] flex-col items-center justify-center text-[11px] text-slate-400 sm:h-[180px]"
                             style={getAspectRatioStyle(field)}
                           >
                             <span>

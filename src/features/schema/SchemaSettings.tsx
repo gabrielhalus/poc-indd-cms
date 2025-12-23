@@ -239,30 +239,30 @@ export function SchemaSettings() {
   };
 
   return (
-    <section className="space-y-6">
-      <header className="flex items-center justify-between">
+    <section className="space-y-4 sm:space-y-6">
+      <header className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h2 className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-lg font-bold text-transparent">
+          <h2 className="bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-base font-bold text-transparent sm:text-lg">
             Schema Settings
           </h2>
           <p className="mt-1 text-xs text-slate-600">
             Define fields, order, and the unique title field for your dataset.
           </p>
         </div>
-        <Button onClick={handleAddField}>Add field</Button>
+        <Button onClick={handleAddField} size="sm">Add field</Button>
       </header>
 
-      <div className="overflow-hidden rounded-xl border border-white/50 bg-white/90 backdrop-blur-md shadow-elevated">
-        <Table>
+      <div className="overflow-x-auto rounded-xl border border-white/50 bg-white/90 backdrop-blur-md shadow-elevated">
+        <Table className="min-w-full">
           <TableHeader>
             <TableRow>
-              <TableHead>Order</TableHead>
-              <TableHead>Name</TableHead>
-              <TableHead>Type</TableHead>
-              <TableHead>Aspect ratio</TableHead>
-              <TableHead>Required</TableHead>
-              <TableHead>Title field</TableHead>
-              <TableHead className="text-right">Actions</TableHead>
+              <TableHead className="min-w-[80px]">Order</TableHead>
+              <TableHead className="min-w-[120px]">Name</TableHead>
+              <TableHead className="min-w-[100px]">Type</TableHead>
+              <TableHead className="min-w-[120px]">Aspect ratio</TableHead>
+              <TableHead className="min-w-[80px] text-center">Required</TableHead>
+              <TableHead className="min-w-[90px] text-center">Title field</TableHead>
+              <TableHead className="min-w-[100px] text-right">Actions</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>

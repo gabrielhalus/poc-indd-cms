@@ -245,10 +245,10 @@ export function ImageCropModal({
 
   return (
     <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
-      <DialogContent className="max-w-md !top-[5%] !translate-y-0 !translate-x-[-50%]" showCloseButton={false}>
+      <DialogContent className="max-w-md !top-[5%] !translate-y-0 !translate-x-[-50%] sm:max-w-lg" showCloseButton={false}>
         <DialogHeader>
-          <DialogTitle>Crop image</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-base sm:text-lg">Crop image</DialogTitle>
+          <DialogDescription className="text-xs sm:text-sm">
             Adjust the crop window to match ratio <strong>{aspectRatio}</strong>. Drag to move, resize from bottom-right corner.
           </DialogDescription>
         </DialogHeader>
@@ -257,7 +257,7 @@ export function ImageCropModal({
             <div className="mt-2">
               <div
                 ref={handleContainerRef}
-                className="relative h-96 w-full overflow-hidden rounded-xl border border-slate-200/50 bg-slate-100 shadow-inner"
+                className="relative h-64 w-full overflow-hidden rounded-xl border border-slate-200/50 bg-slate-100 shadow-inner sm:h-96"
                 onMouseMove={handlePointerMove}
                 onMouseUp={handlePointerUp}
                 onMouseLeave={handlePointerUp}
@@ -351,6 +351,7 @@ export function ImageCropModal({
             variant="outline"
             onClick={onClose}
             disabled={isProcessing}
+            size="sm"
           >
             Cancel
           </Button>
@@ -358,6 +359,7 @@ export function ImageCropModal({
             type="button"
             onClick={handleConfirm}
             disabled={isProcessing}
+            size="sm"
           >
             {isProcessing ? <Loader2Icon className="size-4 animate-spin" /> : 'Use image'}
           </Button>

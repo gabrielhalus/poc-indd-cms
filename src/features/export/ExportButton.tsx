@@ -149,8 +149,8 @@ export function ExportButton() {
   };
 
   return (
-    <div className="flex items-center gap-3">
-      <Button type="button" onClick={handleExport} disabled={isExporting}>
+    <div className="flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-3">
+      <Button type="button" onClick={handleExport} disabled={isExporting} size="sm">
         {isExporting ? <Loader2Icon className="size-4 animate-spin" /> : 'Export CSV + images'}
       </Button>
       {error ? (

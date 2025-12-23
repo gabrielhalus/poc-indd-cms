@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "shadcn": {
+      "command": "bun",
+      "args": [
+        "x",
+        "shadcn@latest",
+        "mcp"
+      ]
+    },
+    "supabase": {
+      "url": "https://mcp.supabase.com/mcp?project_ref=cqzpdqerbznaojdhbrus"
+    }
+  }
+}
